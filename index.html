@@ -1,1 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SL Past Papers – Free Term Test & Provincial Papers for All Grades</title>
+<meta name="description" content="Free Sri Lankan past papers, term test papers and provincial papers for Grade 1 to 13. Download O/L, A/L and all grade papers in Sinhala, Tamil and English.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<!-- ✅ GOOGLE ADSENSE: Replace 'ca-pub-XXXXXXXXXXXXXXXX' with your actual Publisher ID after approval -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<style>
+  :root {
+    --navy: #0a1628;
+    --deep: #0d1f3c;
+    --blue: #1a4fd6;
+    --sky: #3b82f6;
+    --gold: #f59e0b;
+    --gold-light: #fcd34d;
+    --cream: #fef9ef;
+    --white: #ffffff;
+    --gray: #64748b;
+    --light: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ===== TOP AD BANNER SLOT ===== */
+  .ad-top {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 8px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ad-placeholder {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 728px;
+    height: 90px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 50%, #0f2d5e 100%);
+    color: white;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 2px 10px rgba(245,158,11,0.4);
+  }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+  .logo-sub { font-size: 11px; color: #94a3b8; font-weight: 400; letter-spacing: 0.05em; }
+
+  nav { display: flex; gap: 4px; }
+  nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  nav a:hover, nav a.active { color: white; background: rgba(255,255,255,0.1); }
+
+  .nav-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #0f2d5e 60%, #1a4fd6 100%);
+    color: white;
+    padding: 64px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245,158,11,0.15);
+    border: 1px solid rgba(245,158,11,0.3);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 6vw, 58px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold-light);
+  }
+  .stat-label { font-size: 13px; color: #94a3b8; margin-top: 2px; }
+
+  /* ===== SEARCH ===== */
+  .search-section {
+    background: white;
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .search-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+  }
+  .search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--light);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0 16px;
+    gap: 10px;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus-within { border-color: var(--sky); }
+  .search-box svg { color: var(--gray); flex-shrink: 0; }
+  .search-box input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    padding: 14px 0;
+    outline: none;
+  }
+  .search-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .search-btn:hover { background: var(--sky); }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .section-sub { font-size: 14px; color: var(--gray); margin-bottom: 24px; }
+
+  /* ===== GRADE CARDS ===== */
+  .grade-group { margin-bottom: 48px; }
+  .grade-group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .grade-group-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .grade-tag {
+    background: var(--navy);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .grade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .grade-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .grade-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--sky));
+    transform: scaleX(0);
+    transition: transform 0.2s;
+    transform-origin: left;
+  }
+  .grade-card:hover {
+    border-color: var(--sky);
+    box-shadow: 0 4px 20px rgba(59,130,246,0.12);
+    transform: translateY(-2px);
+  }
+  .grade-card:hover::before { transform: scaleX(1); }
+
+  .grade-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .grade-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .grade-count { font-size: 12px; color: var(--gray); }
+  .grade-arrow {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    color: var(--sky);
+    font-size: 18px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s;
+  }
+  .grade-card:hover .grade-arrow { opacity: 1; transform: translateX(0); }
+
+  /* ===== PAPER LIST ===== */
+  .paper-section { display: none; }
+  .paper-section.active { display: block; }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-bottom: 20px;
+    transition: gap 0.2s;
+  }
+  .back-btn:hover { gap: 10px; }
+
+  .subject-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .tab-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+  }
+
+  .paper-list { display: flex; flex-direction: column; gap: 10px; }
+  .paper-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s;
+  }
+  .paper-item:hover {
+    border-color: var(--sky);
+    box-shadow: 0 2px 12px rgba(59,130,246,0.1);
+  }
+  .paper-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--blue), var(--sky));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .paper-info { flex: 1; }
+  .paper-title { font-size: 15px; font-weight: 600; color: var(--navy); }
+  .paper-meta { font-size: 12px; color: var(--gray); margin-top: 2px; }
+  .paper-badges { display: flex; gap: 6px; margin-top: 6px; }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-term { background: #dbeafe; color: #1d4ed8; }
+  .badge-prov { background: #dcfce7; color: #15803d; }
+  .badge-ol { background: #fef3c7; color: #b45309; }
+  .badge-al { background: #fce7f3; color: #9d174d; }
+  .badge-sinhala { background: #f3e8ff; color: #6b21a8; }
+  .badge-tamil { background: #fff7ed; color: #c2410c; }
+  .badge-english { background: #f0f9ff; color: #0369a1; }
+
+  .download-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .download-btn:hover { background: var(--sky); }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+  .sidebar-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .sidebar-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .quick-links { display: flex; flex-direction: column; gap: 6px; }
+  .quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--light);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .quick-link:hover { background: #dbeafe; color: var(--blue); }
+  .quick-link span { color: var(--gray); font-size: 12px; }
+
+  /* ===== AD SIDEBAR ===== */
+  .ad-sidebar {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--radius);
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .ad-inline {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--radius);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 28px 0;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: #94a3b8;
+    padding: 48px 24px 24px;
+    margin-top: 60px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand .logo-main { font-size: 22px; color: white; }
+  .footer-brand p { font-size: 13px; line-height: 1.7; margin-top: 10px; }
+  .footer-col h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 12px; }
+  .footer-col a {
+    display: block;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid #1e3a5f;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+  }
+  .footer-bottom a { color: #64748b; text-decoration: none; }
+  .footer-bottom a:hover { color: white; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    nav { display: none; }
+    nav.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 12px; gap: 2px; }
+    .nav-mobile-btn { display: block; }
+    header { position: relative; }
+    .main-container { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .footer-top { grid-template-columns: 1fr; gap: 24px; }
+    .hero { padding: 40px 20px 56px; }
+    .hero-stats { gap: 24px; }
+    .grade-grid { grid-template-columns: repeat(2, 1fr); }
+    .search-inner { flex-direction: column; }
+    .search-btn { width: 100%; padding: 14px; }
+    .paper-item { flex-wrap: wrap; }
+    .download-btn { width: 100%; justify-content: center; margin-top: 4px; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .grade-card { animation: fadeUp 0.4s ease backwards; }
+  .grade-card:nth-child(1) { animation-delay: 0.05s; }
+  .grade-card:nth-child(2) { animation-delay: 0.1s; }
+  .grade-card:nth-child(3) { animation-delay: 0.15s; }
+  .grade-card:nth-child(4) { animation-delay: 0.2s; }
+  .grade-card:nth-child(5) { animation-delay: 0.25s; }
+  .grade-card:nth-child(6) { animation-delay: 0.3s; }
+
+  .notice-bar {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- Notice Bar -->
+<div class="notice-bar">
+  🎓 New! 2024 Provincial Papers now available for Grade 5, Grade 9 & A/L — <a href="#" style="color:var(--navy);text-decoration:underline">View All</a>
+</div>
+
+<!-- Top Ad Banner -->
+<div class="ad-top">
+  <!-- Google AdSense Banner Ad (728x90) — activate after approval -->
+  <!-- <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins> -->
+  <div class="ad-placeholder">Advertisement · 728×90 Banner (Google AdSense)</div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#" id="logo-link">
+      <div class="logo-icon">📚</div>
+      <div class="logo-text">
+        <span class="logo-main">SL Past Papers</span>
+        <span class="logo-sub">Free Papers for All Grades</span>
+      </div>
+    </a>
+    <button class="nav-mobile-btn" id="nav-toggle">☰</button>
+    <nav id="main-nav">
+      <a href="#" id="nav-home" class="active">Home</a>
+      <a href="#ol">O/L Papers</a>
+      <a href="#al">A/L Papers</a>
+      <a href="#provincial">Provincial</a>
+      <a href="#contact">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">🇱🇰 Sri Lanka's #1 Free Paper Resource</div>
+  <h1>Past Papers for Every <span>Sri Lankan</span> Student</h1>
+  <p>Free term test papers, provincial papers & model papers for Grade 1 to Grade 13. Download instantly — no registration needed.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Past Papers</div></div>
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">Grade Levels</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
+    <div class="stat"><div class="stat-num">Free</div><div class="stat-label">Always Free</div></div>
+  </div>
+</section>
+
+<!-- Search -->
+<div class="search-section">
+  <div class="search-inner">
+    <div class="search-box">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search papers e.g. Grade 9 Maths Term 1…" id="searchInput" oninput="searchPapers(this.value)">
+    </div>
+    <button class="search-btn" id="search-btn">Search Papers</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main-container">
+  <!-- Content -->
+  <div>
+
+    <!-- HOME VIEW -->
+    <div id="home-view">
+
+      <!-- PRIMARY GRADES -->
+      <div class="grade-group">
+        <div class="grade-group-title">
+          <span class="grade-group-label">Primary School</span>
+          <span class="grade-tag">Grade 1 – 5</span>
+        </div>
+        <div class="grade-grid">
+          <div class="grade-card" data-grade="1">
+            <div class="grade-num">01</div>
+            <div class="grade-name">Grade 1</div>
+            <div class="grade-count">12 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="2">
+            <div class="grade-num">02</div>
+            <div class="grade-name">Grade 2</div>
+            <div class="grade-count">14 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="3">
+            <div class="grade-num">03</div>
+            <div class="grade-name">Grade 3</div>
+            <div class="grade-count">15 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="4">
+            <div class="grade-num">04</div>
+            <div class="grade-name">Grade 4</div>
+            <div class="grade-count">16 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="5">
+            <div class="grade-num">05</div>
+            <div class="grade-name">Grade 5</div>
+            <div class="grade-count">Scholarship exam — 22 papers</div>
+            <span class="grade-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD INLINE -->
+      <div class="ad-inline">
+        <!-- Google AdSense Inline Ad (728x90) — activate after approval -->
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto"></ins> -->
+        Advertisement · Inline Ad Unit (Google AdSense)
+      </div>
+
+      <!-- MIDDLE SCHOOL -->
+      <div class="grade-group">
+        <div class="grade-group-title">
+          <span class="grade-group-label">Middle School</span>
+          <span class="grade-tag">Grade 6 – 9</span>
+        </div>
+        <div class="grade-grid">
+          <div class="grade-card" data-grade="6">
+            <div class="grade-num">06</div>
+            <div class="grade-name">Grade 6</div>
+            <div class="grade-count">18 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="7">
+            <div class="grade-num">07</div>
+            <div class="grade-name">Grade 7</div>
+            <div class="grade-count">20 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="8">
+            <div class="grade-num">08</div>
+            <div class="grade-name">Grade 8</div>
+            <div class="grade-count">20 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="9">
+            <div class="grade-num">09</div>
+            <div class="grade-name">Grade 9</div>
+            <div class="grade-count">24 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- O/L -->
+      <div class="grade-group" id="ol">
+        <div class="grade-group-title">
+          <span class="grade-group-label">Ordinary Level (O/L)</span>
+          <span class="grade-tag">Grade 10 – 11</span>
+        </div>
+        <div class="grade-grid">
+          <div class="grade-card" data-grade="10">
+            <div class="grade-num">10</div>
+            <div class="grade-name">Grade 10</div>
+            <div class="grade-count">28 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="11">
+            <div class="grade-num">11</div>
+            <div class="grade-name">Grade 11 (O/L)</div>
+            <div class="grade-count">45 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD INLINE 2 -->
+      <div class="ad-inline">
+        <!-- Google AdSense Inline Ad — activate after approval -->
+        Advertisement · Inline Ad Unit (Google AdSense)
+      </div>
+
+      <!-- A/L -->
+      <div class="grade-group" id="al">
+        <div class="grade-group-title">
+          <span class="grade-group-label">Advanced Level (A/L)</span>
+          <span class="grade-tag">Grade 12 – 13</span>
+        </div>
+        <div class="grade-grid">
+          <div class="grade-card" data-grade="12">
+            <div class="grade-num">12</div>
+            <div class="grade-name">Grade 12</div>
+            <div class="grade-count">30 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+          <div class="grade-card" data-grade="13">
+            <div class="grade-num">13</div>
+            <div class="grade-name">Grade 13 (A/L)</div>
+            <div class="grade-count">52 papers available</div>
+            <span class="grade-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end home-view -->
+
+    <!-- GRADE DETAIL VIEW -->
+    <div id="grade-view" style="display:none;">
+      <button class="back-btn" id="back-btn">← Back to All Grades</button>
+      <div id="grade-title" class="section-title"></div>
+      <p class="section-sub" id="grade-sub"></p>
+
+      <!-- Medium Filter -->
+      <div style="margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:600;color:var(--gray);margin-bottom:8px;letter-spacing:0.04em;">MEDIUM OF INSTRUCTION</div>
+        <div class="subject-tabs" id="medium-tabs" style="margin-bottom:0;">
+          <button class="tab-btn active" data-medium="All">🌐 All</button>
+          <button class="tab-btn" data-medium="Sinhala" style="border-color:#e9d5ff;color:#6b21a8;">සිංහල Medium</button>
+          <button class="tab-btn" data-medium="Tamil" style="border-color:#fed7aa;color:#c2410c;">தமிழ் Medium</button>
+          <button class="tab-btn" data-medium="English" style="border-color:#bae6fd;color:#0369a1;">English Medium</button>
+        </div>
+      </div>
+
+      <!-- Subject Filter -->
+      <div style="margin-bottom:20px;">
+        <div style="font-size:13px;font-weight:600;color:var(--gray);margin-bottom:8px;letter-spacing:0.04em;">SUBJECT</div>
+        <div class="subject-tabs" id="subject-tabs"></div>
+      </div>
+
+      <div id="results-count" style="font-size:13px;color:var(--gray);margin-bottom:12px;"></div>
+
+      <div class="paper-list" id="paper-list"></div>
+
+      <!-- AD after papers -->
+      <div class="ad-inline">
+        Advertisement · Inline Ad Unit (Google AdSense)
+      </div>
+    </div>
+
+  </div><!-- end content -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Quick Links -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">⭐ Popular Papers</div>
+      <div class="quick-links">
+        <button class="quick-link" data-grade="11">Grade 11 O/L Papers <span>45</span></button>
+        <button class="quick-link" data-grade="13">Grade 13 A/L Papers <span>52</span></button>
+        <button class="quick-link" data-grade="5">Grade 5 Scholarship <span>22</span></button>
+        <button class="quick-link" data-grade="9">Grade 9 Term Papers <span>24</span></button>
+        <button class="quick-link" data-grade="10">Grade 10 Papers <span>28</span></button>
+      </div>
+    </div>
+
+    <!-- Ad Block -->
+    <div class="sidebar-card" style="padding:0; overflow:hidden; border:2px dashed #cbd5e1;">
+      <div class="ad-sidebar">
+        <!-- Google AdSense Square Ad (300x250) — activate after approval -->
+        <!-- <ins class="adsbygoogle" style="display:block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins> -->
+        Ad · 300×250<br>(Google AdSense)
+      </div>
+    </div>
+
+    <!-- Subject Guide -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">📘 O/L Subjects Available</div>
+      <div class="quick-links">
+        <div class="quick-link" style="cursor:default;">Mathematics</div>
+        <div class="quick-link" style="cursor:default;">Science</div>
+        <div class="quick-link" style="cursor:default;">Sinhala Language</div>
+        <div class="quick-link" style="cursor:default;">Sinhala Literature</div>
+        <div class="quick-link" style="cursor:default;">Tamil Language</div>
+        <div class="quick-link" style="cursor:default;">English Language</div>
+        <div class="quick-link" style="cursor:default;">English Literature</div>
+        <div class="quick-link" style="cursor:default;">History</div>
+        <div class="quick-link" style="cursor:default;">ICT</div>
+        <div class="quick-link" style="cursor:default;">Commerce</div>
+        <div class="quick-link" style="cursor:default;">Western Music</div>
+        <div class="quick-link" style="cursor:default;">Eastern Music</div>
+        <div class="quick-link" style="cursor:default;">Art</div>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">🌐 Medium of Instruction</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-sinhala" style="padding:6px 14px;font-size:13px;">Sinhala</span>
+        <span class="badge badge-tamil" style="padding:6px 14px;font-size:13px;">Tamil</span>
+        <span class="badge badge-english" style="padding:6px 14px;font-size:13px;">English</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-main" style="font-family:'Playfair Display',serif;font-size:22px;color:white;">📚 SL Past Papers</div>
+        <p>Sri Lanka's free resource for term test papers, provincial papers and model papers for all grades from Grade 1 to A/L. Helping students achieve their best since 2024.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#">Grade 5 Scholarship</a>
+        <a href="#">O/L Past Papers</a>
+        <a href="#">A/L Past Papers</a>
+        <a href="#">Provincial Papers</a>
+        <a href="#">Term Test Papers</a>
+      </div>
+      <div class="footer-col" id="contact">
+        <h4>About</h4>
+        <a href="#">About SL Past Papers</a>
+        <a href="#">Upload a Paper</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 SL Past Papers · Free educational resource for Sri Lankan students</span>
+      <div style="display:flex;gap:16px;">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== PAPER DATA =====
+// medium: "Sinhala" | "Tamil" | "English"
+// Replace file:"#" with your real Google Drive shareable link
+
+const papers = {
+  1: {
+    name:"Grade 1", subjects:["Mathematics","Environmental Science","Sinhala","Tamil","English"],
+    papers:[
+      {title:"Grade 1 Mathematics – Term 1 2023",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Mathematics – Term 2 2023",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Mathematics – Term 1 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 1 Mathematics – Term 1 2023 (English)",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 1 Sinhala – Term 1 2023",subject:"Sinhala",year:2023,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Tamil – Term 1 2023",subject:"Tamil",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 1 English – Term 1 2023",subject:"English",year:2023,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 1 Environmental Science – Term 1 2023 (Tamil)",subject:"Environmental Science",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+    ]
+  },
+  5: {
+    name:"Grade 5 (Scholarship)", subjects:["Mathematics","Sinhala","Tamil","English","Science","History"],
+    papers:[
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (Sinhala)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (Tamil)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (English)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"English",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper II (Sinhala)",subject:"Sinhala",year:2023,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper II (Tamil)",subject:"Tamil",year:2023,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (Sinhala)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (Tamil)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (English)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"English",file:"#"},
+      {title:"Western Province – Grade 5 Model Paper 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Western Province – Grade 5 Model Paper 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+      {title:"Northern Province – Grade 5 Model Paper 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+    ]
+  },
+  9: {
+    name:"Grade 9", subjects:["Mathematics","Science","Sinhala","Tamil","English","History","ICT","Geography"],
+    papers:[
+      {title:"Grade 9 Mathematics – Term 1 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Mathematics – Term 1 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Mathematics – Term 2 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Mathematics – Term 2 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Mathematics – Term 3 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Term 3",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (Tamil)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (English)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Science – Term 2 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 2 2024 (Tamil)",subject:"Science",year:2024,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 English – Term 1 2024 (English)",subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Tamil – Term 1 2024 (Tamil)",subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 History – Term 1 2024 (Tamil)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Western Province – Grade 9 Maths 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Northern Province – Grade 9 Maths 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+      {title:"Central Province – Grade 9 Science 2023 (English)",subject:"Science",year:2023,term:"Provincial",type:"provincial",medium:"English",file:"#"},
+    ]
+  },
+  10: {
+    name:"Grade 10",
+    subjects:["Mathematics","Science","Sinhala","Tamil","English","History","ICT","Commerce","Sinhala Literature","English Literature","Western Music","Eastern Music","Art"],
+    papers:[
+      {title:"Grade 10 Mathematics – Term 1 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Mathematics – Term 1 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Mathematics – Term 2 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Mathematics – Term 2 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (Tamil)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (English)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Sinhala – Term 1 2024 (Sinhala)",subject:"Sinhala",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Sinhala Literature – Term 1 2024 (Sinhala)",subject:"Sinhala Literature",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Tamil – Term 1 2024 (Tamil)",subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 English – Term 1 2024 (English)",subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 English Literature – Term 1 2024 (English)",subject:"English Literature",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 History – Term 1 2024 (Sinhala)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 History – Term 1 2024 (Tamil)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (Sinhala)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (Tamil)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (English)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Commerce – Term 1 2024 (Sinhala)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Commerce – Term 1 2024 (Tamil)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (Sinhala)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (Tamil)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (English)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Eastern Music – Term 1 2024 (Sinhala)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Eastern Music – Term 1 2024 (Tamil)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Art – Term 1 2024 (Sinhala)",subject:"Art",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Western Province – Grade 10 Maths 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Northern Province – Grade 10 Maths 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+    ]
+  },
+    papers:[
+      // === MATHEMATICS ===
+      {title:"O/L Mathematics – 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Mathematics – 2023 (Tamil)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Mathematics – 2023 (English)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Mathematics – 2022 (Sinhala)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Mathematics – 2022 (Tamil)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Mathematics – 2022 (English)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 Western Province (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 Northern Province (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      // === SCIENCE ===
+      {title:"O/L Science – 2023 (Sinhala)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Science – 2023 (Tamil)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Science – 2023 (English)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Science – 2022 (Sinhala)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Science – 2022 (Tamil)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Science – 2022 (English)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      // === SINHALA LANGUAGE ===
+      {title:"O/L Sinhala Language – 2023 (Sinhala)",subject:"Sinhala",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Sinhala Language – 2022 (Sinhala)",subject:"Sinhala",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      // === SINHALA LITERATURE ===
+      {title:"O/L Sinhala Literature – 2023 (Sinhala)",subject:"Sinhala Literature",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Sinhala Literature – 2022 (Sinhala)",subject:"Sinhala Literature",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Sinhala Literature – Term 1 2024 (Sinhala)",subject:"Sinhala Literature",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === TAMIL LANGUAGE ===
+      {title:"O/L Tamil Language – 2023 (Tamil)",subject:"Tamil",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Tamil Language – 2022 (Tamil)",subject:"Tamil",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      // === ENGLISH LANGUAGE ===
+      {title:"O/L English Language – 2023 (English)",subject:"English",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L English Language – 2022 (English)",subject:"English",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      // === ENGLISH LITERATURE ===
+      {title:"O/L English Literature – 2023 (English)",subject:"English Literature",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L English Literature – 2022 (English)",subject:"English Literature",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"Grade 11 English Literature – Term 1 2024 (English)",subject:"English Literature",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      // === HISTORY ===
+      {title:"O/L History – 2023 (Sinhala)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L History – 2023 (Tamil)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L History – 2023 (English)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L History – 2022 (Sinhala)",subject:"History",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L History – 2022 (Tamil)",subject:"History",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      // === ICT ===
+      {title:"O/L ICT – 2023 (Sinhala)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L ICT – 2023 (Tamil)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L ICT – 2023 (English)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L ICT – 2022 (Sinhala)",subject:"ICT",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L ICT – 2022 (Tamil)",subject:"ICT",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 ICT – Term 1 2024 (Sinhala)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 ICT – Term 1 2024 (Tamil)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      // === COMMERCE ===
+      {title:"O/L Commerce – 2023 (Sinhala)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Commerce – 2023 (Tamil)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Commerce – 2023 (English)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Commerce – 2022 (Sinhala)",subject:"Commerce",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Commerce – 2022 (Tamil)",subject:"Commerce",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Commerce – Term 1 2024 (Sinhala)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === WESTERN MUSIC ===
+      {title:"O/L Western Music – 2023 (Sinhala)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Western Music – 2023 (Tamil)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Western Music – 2023 (English)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Western Music – 2022 (Sinhala)",subject:"Western Music",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Western Music – Term 1 2024 (Sinhala)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === EASTERN MUSIC ===
+      {title:"O/L Eastern Music – 2023 (Sinhala)",subject:"Eastern Music",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Eastern Music – 2023 (Tamil)",subject:"Eastern Music",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Eastern Music – 2022 (Sinhala)",subject:"Eastern Music",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Eastern Music – 2022 (Tamil)",subject:"Eastern Music",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Eastern Music – Term 1 2024 (Sinhala)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Eastern Music – Term 1 2024 (Tamil)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      // === ART ===
+      {title:"O/L Art – 2023 (Sinhala)",subject:"Art",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Art – 2023 (Tamil)",subject:"Art",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Art – 2022 (Sinhala)",subject:"Art",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Art – Term 1 2024 (Sinhala)",subject:"Art",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+    ]
+  },
+  13: {
+    name:"Grade 13 (A/L)", subjects:["Combined Maths","Physics","Chemistry","Biology","Economics","Accounting","Tamil","Sinhala"],
+    papers:[
+      {title:"A/L Combined Maths – 2023 (Sinhala)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Combined Maths – 2023 (Tamil)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Combined Maths – 2023 (English)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Combined Maths – 2022 (Sinhala)",subject:"Combined Maths",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Combined Maths – 2022 (Tamil)",subject:"Combined Maths",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Physics – 2023 (Sinhala)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Physics – 2023 (Tamil)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Physics – 2023 (English)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Physics – 2022 (Sinhala)",subject:"Physics",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Physics – 2022 (Tamil)",subject:"Physics",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Chemistry – 2023 (Sinhala)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Chemistry – 2023 (Tamil)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Chemistry – 2023 (English)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Chemistry – 2022 (Sinhala)",subject:"Chemistry",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Chemistry – 2022 (Tamil)",subject:"Chemistry",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Biology – 2023 (Sinhala)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Biology – 2023 (Tamil)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Biology – 2023 (English)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Economics – 2023 (Sinhala)",subject:"Economics",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Economics – 2023 (Tamil)",subject:"Economics",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Accounting – 2023 (Sinhala)",subject:"Accounting",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Accounting – 2023 (Tamil)",subject:"Accounting",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Maths Model Paper 2024 Western Province (Sinhala)",subject:"Combined Maths",year:2024,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"A/L Maths Model Paper 2024 Northern Province (Tamil)",subject:"Combined Maths",year:2024,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+    ]
+  }
+};
+
+// Generate default data for missing grades (all 3 mediums)
+for(let g=1;g<=13;g++){
+  if(!papers[g]){
+    papers[g]={
+      name:`Grade ${g}`,
+      subjects:["Mathematics","Science","Sinhala","Tamil","English","History"],
+      papers:[
+        {title:`Grade ${g} Mathematics – Term 1 2024 (Sinhala)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 1 2024 (Tamil)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 1 2024 (English)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 2 2023 (Sinhala)`,subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 2 2023 (Tamil)`,subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (Sinhala)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (Tamil)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (English)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Grade ${g} Sinhala – Term 1 2024 (Sinhala)`,subject:"Sinhala",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Tamil – Term 1 2024 (Tamil)`,subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} English – Term 1 2024 (English)`,subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Western Province – Grade ${g} Maths 2023 (Sinhala)`,subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+        {title:`Northern Province – Grade ${g} Maths 2023 (Tamil)`,subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+      ]
+    };
+  }
+}
+
+let currentGrade = null;
+let currentSubject = "All";
+let currentMedium = "All";
+
+function showHome() {
+  document.getElementById('home-view').style.display = '';
+  document.getElementById('grade-view').style.display = 'none';
+}
+
+function showGrade(g) {
+  currentGrade = g;
+  currentSubject = "All";
+  currentMedium = "All";
+  const data = papers[g];
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('grade-view').style.display = '';
+  document.getElementById('grade-title').textContent = data.name + " Past Papers";
+  document.getElementById('grade-sub').textContent = `${data.papers.length} papers available — Sinhala, Tamil & English Medium`;
+
+  // Reset medium tabs
+  document.querySelectorAll('#medium-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('#medium-tabs .tab-btn').classList.add('active');
+
+  // Build subject tabs safely using DOM (no innerHTML with onclick — avoids quote-breaking bugs)
+  const tabs = document.getElementById('subject-tabs');
+  tabs.innerHTML = '';
+  const allSubjects = ["All", ...data.subjects];
+  allSubjects.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (s === 'All' ? ' active' : '');
+    btn.textContent = s === 'All' ? 'All Subjects' : s;
+    btn.dataset.subject = s;
+    btn.addEventListener('click', function() {
+      currentSubject = s;
+      document.querySelectorAll('#subject-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      applyFilters();
+    });
+    tabs.appendChild(btn);
+  });
+
+  applyFilters();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function filterMedium(medium, btn) {
+  currentMedium = medium;
+  document.querySelectorAll('#medium-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function filterSubject(subject, btn) {
+  currentSubject = subject;
+  document.querySelectorAll('#subject-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  let list = papers[currentGrade].papers;
+  if(currentMedium !== 'All') list = list.filter(p => p.medium === currentMedium);
+  if(currentSubject !== 'All') list = list.filter(p => p.subject === currentSubject);
+  const countEl = document.getElementById('results-count');
+  countEl.textContent = `Showing ${list.length} paper${list.length !== 1 ? 's' : ''}${currentMedium !== 'All' ? ' · ' + currentMedium + ' medium' : ''}${currentSubject !== 'All' ? ' · ' + currentSubject : ''}`;
+  renderPapers(list);
+}
+
+function getBadge(type, medium) {
+  let b = '';
+  if(type==='term') b += `<span class="badge badge-term">Term Test</span>`;
+  else if(type==='provincial') b += `<span class="badge badge-prov">Provincial</span>`;
+  else if(type==='ol') b += `<span class="badge badge-ol">O/L Exam</span>`;
+  else if(type==='al') b += `<span class="badge badge-al">A/L Exam</span>`;
+  else if(type==='scholarship') b += `<span class="badge badge-prov">Scholarship</span>`;
+  if(medium==='Sinhala') b += `<span class="badge badge-sinhala">සිංහල</span>`;
+  else if(medium==='Tamil') b += `<span class="badge badge-tamil">தமிழ்</span>`;
+  else if(medium==='English') b += `<span class="badge badge-english">English</span>`;
+  return b;
+}
+
+function renderPapers(list) {
+  const el = document.getElementById('paper-list');
+  if(!list.length){
+    el.innerHTML = `<div style="text-align:center;padding:48px 20px;color:var(--gray);">
+      <div style="font-size:36px;margin-bottom:12px;">📭</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:6px;">No papers found</div>
+      <div style="font-size:13px;">Try selecting a different medium or subject filter.</div>
+    </div>`;
+    return;
+  }
+  el.innerHTML = list.map(p => `
+    <div class="paper-item">
+      <div class="paper-icon">📄</div>
+      <div class="paper-info">
+        <div class="paper-title">${p.title}</div>
+        <div class="paper-meta">${p.subject} · ${p.year}</div>
+        <div class="paper-badges">${getBadge(p.type, p.medium)}</div>
+      </div>
+      <a class="download-btn" href="${p.file}" target="_blank" onclick="handleDownload(event, '${p.title.replace(/'/g,"\\'")}')">
+        ⬇ Download
+      </a>
+    </div>
+  `).join('');
+}
+
+function handleDownload(e, title) {
+  if(e.target.closest('a').getAttribute('href') === '#') {
+    e.preventDefault();
+    alert(`📋 "${title}"\n\nTo activate this download:\n1. Upload your PDF to Google Drive\n2. Click Share → Anyone with the link\n3. Copy the link\n4. Open index.html on GitHub → edit → find this paper → replace "#" with your link\n\nThis is how you add your real papers!`);
+  }
+}
+
+function searchPapers(q) {
+  if(!q || !q.trim()) return;
+  const results = [];
+  for(let g=1;g<=13;g++){
+    papers[g].papers.forEach(p => {
+      const hay = (p.title+p.subject+p.medium+p.year).toLowerCase();
+      if(hay.includes(q.toLowerCase())) results.push({...p, grade:g});
+    });
+  }
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('grade-view').style.display = '';
+  document.getElementById('grade-title').textContent = `Search: "${q}"`;
+  document.getElementById('grade-sub').textContent = `${results.length} papers found across all grades`;
+  document.getElementById('medium-tabs').innerHTML = '';
+  document.getElementById('subject-tabs').innerHTML = '';
+  document.getElementById('results-count').textContent = '';
+  renderPapers(results);
+}
+
+// ===== MASTER EVENT WIRING (runs after DOM is ready) =====
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Grade cards (home grid)
+  document.querySelectorAll('.grade-card[data-grade]').forEach(card => {
+    card.addEventListener('click', function() {
+      showGrade(parseInt(this.dataset.grade));
+    });
+  });
+
+  // Sidebar quick links
+  document.querySelectorAll('.quick-link[data-grade]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      showGrade(parseInt(this.dataset.grade));
+    });
+  });
+
+  // Medium filter tabs
+  document.querySelectorAll('#medium-tabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterMedium(this.dataset.medium, this);
+    });
+  });
+
+  // Back button
+  document.getElementById('back-btn').addEventListener('click', showHome);
+
+  // Logo & nav home
+  document.getElementById('logo-link').addEventListener('click', function(e){ e.preventDefault(); showHome(); });
+  document.getElementById('nav-home').addEventListener('click', function(e){ e.preventDefault(); showHome(); });
+
+  // Mobile nav toggle
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+
+  // Search button
+  document.getElementById('search-btn').addEventListener('click', function() {
+    searchPapers(document.getElementById('searchInput').value);
+  });
+
+  // Search on Enter key
+  document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if(e.key === 'Enter') searchPapers(this.value);
+  });
+
+});
+</script>
+
+</body>
+</html>
