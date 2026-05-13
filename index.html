@@ -833,7 +833,24 @@
       <div id="grade-title" class="section-title"></div>
       <p class="section-sub" id="grade-sub"></p>
 
-      <div class="subject-tabs" id="subject-tabs"></div>
+      <!-- Medium Filter -->
+      <div style="margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:600;color:var(--gray);margin-bottom:8px;letter-spacing:0.04em;">MEDIUM OF INSTRUCTION</div>
+        <div class="subject-tabs" id="medium-tabs" style="margin-bottom:0;">
+          <button class="tab-btn active" onclick="filterMedium('All',this)">🌐 All</button>
+          <button class="tab-btn" onclick="filterMedium('Sinhala',this)" style="border-color:#e9d5ff;color:#6b21a8;">සිංහල Medium</button>
+          <button class="tab-btn" onclick="filterMedium('Tamil',this)" style="border-color:#fed7aa;color:#c2410c;">தமிழ் Medium</button>
+          <button class="tab-btn" onclick="filterMedium('English',this)" style="border-color:#bae6fd;color:#0369a1;">English Medium</button>
+        </div>
+      </div>
+
+      <!-- Subject Filter -->
+      <div style="margin-bottom:20px;">
+        <div style="font-size:13px;font-weight:600;color:var(--gray);margin-bottom:8px;letter-spacing:0.04em;">SUBJECT</div>
+        <div class="subject-tabs" id="subject-tabs"></div>
+      </div>
+
+      <div id="results-count" style="font-size:13px;color:var(--gray);margin-bottom:12px;"></div>
 
       <div class="paper-list" id="paper-list"></div>
 
@@ -871,14 +888,21 @@
 
     <!-- Subject Guide -->
     <div class="sidebar-card">
-      <div class="sidebar-title">📘 Subjects Available</div>
+      <div class="sidebar-title">📘 O/L Subjects Available</div>
       <div class="quick-links">
         <div class="quick-link" style="cursor:default;">Mathematics</div>
         <div class="quick-link" style="cursor:default;">Science</div>
         <div class="quick-link" style="cursor:default;">Sinhala Language</div>
+        <div class="quick-link" style="cursor:default;">Sinhala Literature</div>
+        <div class="quick-link" style="cursor:default;">Tamil Language</div>
         <div class="quick-link" style="cursor:default;">English Language</div>
-        <div class="quick-link" style="cursor:default;">History / Civics</div>
+        <div class="quick-link" style="cursor:default;">English Literature</div>
+        <div class="quick-link" style="cursor:default;">History</div>
         <div class="quick-link" style="cursor:default;">ICT</div>
+        <div class="quick-link" style="cursor:default;">Commerce</div>
+        <div class="quick-link" style="cursor:default;">Western Music</div>
+        <div class="quick-link" style="cursor:default;">Eastern Music</div>
+        <div class="quick-link" style="cursor:default;">Art</div>
       </div>
     </div>
 
@@ -932,86 +956,223 @@
 </footer>
 
 <script>
-// ===== PAPER DATA (replace with your real PDF links) =====
+// ===== PAPER DATA =====
+// medium: "Sinhala" | "Tamil" | "English"
+// Replace file:"#" with your real Google Drive shareable link
+
 const papers = {
   1: {
-    name: "Grade 1", subjects: ["Mathematics","Sinhala","English","Environmental"],
-    papers: [
-      { title:"Grade 1 Mathematics – Term 1 2023", subject:"Mathematics", year:2023, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 1 Mathematics – Term 2 2023", subject:"Mathematics", year:2023, term:"Term 2", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 1 Sinhala – Term 1 2023", subject:"Sinhala", year:2023, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 1 English – Term 1 2023", subject:"English", year:2023, term:"Term 1", type:"term", medium:"English", file:"#" },
+    name:"Grade 1", subjects:["Mathematics","Environmental Science","Sinhala","Tamil","English"],
+    papers:[
+      {title:"Grade 1 Mathematics – Term 1 2023",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Mathematics – Term 2 2023",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Mathematics – Term 1 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 1 Mathematics – Term 1 2023 (English)",subject:"Mathematics",year:2023,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 1 Sinhala – Term 1 2023",subject:"Sinhala",year:2023,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 1 Tamil – Term 1 2023",subject:"Tamil",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 1 English – Term 1 2023",subject:"English",year:2023,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 1 Environmental Science – Term 1 2023 (Tamil)",subject:"Environmental Science",year:2023,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
     ]
   },
   5: {
-    name: "Grade 5 (Scholarship)", subjects: ["Mathematics","Sinhala","English","Science","History"],
-    papers: [
-      { title:"Grade 5 Scholarship Exam 2023 – Paper I", subject:"Mathematics", year:2023, term:"Scholarship", type:"scholarship", medium:"Sinhala", file:"#" },
-      { title:"Grade 5 Scholarship Exam 2023 – Paper II", subject:"Sinhala", year:2023, term:"Scholarship", type:"scholarship", medium:"Sinhala", file:"#" },
-      { title:"Grade 5 Scholarship 2022 – Paper I", subject:"Mathematics", year:2022, term:"Scholarship", type:"scholarship", medium:"Sinhala", file:"#" },
-      { title:"Grade 5 Scholarship 2022 – Paper II", subject:"Sinhala", year:2022, term:"Scholarship", type:"scholarship", medium:"Sinhala", file:"#" },
-      { title:"Western Province – Grade 5 Model Paper 2023", subject:"Mathematics", year:2023, term:"Provincial", type:"provincial", medium:"Sinhala", file:"#" },
-      { title:"Southern Province – Grade 5 Model Paper 2023", subject:"Mathematics", year:2023, term:"Provincial", type:"provincial", medium:"Sinhala", file:"#" },
+    name:"Grade 5 (Scholarship)", subjects:["Mathematics","Sinhala","Tamil","English","Science","History"],
+    papers:[
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (Sinhala)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (Tamil)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper I (English)",subject:"Mathematics",year:2023,term:"Scholarship",type:"scholarship",medium:"English",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper II (Sinhala)",subject:"Sinhala",year:2023,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship Exam 2023 – Paper II (Tamil)",subject:"Tamil",year:2023,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (Sinhala)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"Sinhala",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (Tamil)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"Tamil",file:"#"},
+      {title:"Grade 5 Scholarship 2022 – Paper I (English)",subject:"Mathematics",year:2022,term:"Scholarship",type:"scholarship",medium:"English",file:"#"},
+      {title:"Western Province – Grade 5 Model Paper 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Western Province – Grade 5 Model Paper 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+      {title:"Northern Province – Grade 5 Model Paper 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
     ]
   },
   9: {
-    name: "Grade 9", subjects: ["Mathematics","Science","Sinhala","English","History","ICT","Geography"],
-    papers: [
-      { title:"Grade 9 Mathematics – Term 1 2024", subject:"Mathematics", year:2024, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 9 Mathematics – Term 2 2024", subject:"Mathematics", year:2024, term:"Term 2", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 9 Mathematics – Term 3 2023", subject:"Mathematics", year:2023, term:"Term 3", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 9 Science – Term 1 2024", subject:"Science", year:2024, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 9 Science – Term 2 2024", subject:"Science", year:2024, term:"Term 2", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Western Province – Grade 9 Maths 2023", subject:"Mathematics", year:2023, term:"Provincial", type:"provincial", medium:"Sinhala", file:"#" },
-      { title:"Central Province – Grade 9 Science 2023", subject:"Science", year:2023, term:"Provincial", type:"provincial", medium:"Sinhala", file:"#" },
-      { title:"Grade 9 English – Term 1 2024", subject:"English", year:2024, term:"Term 1", type:"term", medium:"English", file:"#" },
+    name:"Grade 9", subjects:["Mathematics","Science","Sinhala","Tamil","English","History","ICT","Geography"],
+    papers:[
+      {title:"Grade 9 Mathematics – Term 1 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Mathematics – Term 1 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Mathematics – Term 2 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Mathematics – Term 2 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Mathematics – Term 3 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Term 3",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (Tamil)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 Science – Term 1 2024 (English)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Science – Term 2 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 9 Science – Term 2 2024 (Tamil)",subject:"Science",year:2024,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 English – Term 1 2024 (English)",subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 9 Tamil – Term 1 2024 (Tamil)",subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 9 History – Term 1 2024 (Tamil)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Western Province – Grade 9 Maths 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Northern Province – Grade 9 Maths 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+      {title:"Central Province – Grade 9 Science 2023 (English)",subject:"Science",year:2023,term:"Provincial",type:"provincial",medium:"English",file:"#"},
     ]
   },
-  11: {
-    name: "Grade 11 (O/L)", subjects: ["Mathematics","Science","Sinhala","English","History","ICT","Commerce","Art"],
-    papers: [
-      { title:"O/L Mathematics – 2023 Paper", subject:"Mathematics", year:2023, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L Mathematics – 2022 Paper", subject:"Mathematics", year:2022, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L Mathematics – 2021 Paper", subject:"Mathematics", year:2021, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L Science – 2023 Paper", subject:"Science", year:2023, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L Science – 2022 Paper", subject:"Science", year:2022, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L English – 2023 Paper", subject:"English", year:2023, term:"O/L Exam", type:"ol", medium:"English", file:"#" },
-      { title:"O/L Sinhala – 2023 Paper", subject:"Sinhala", year:2023, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"O/L ICT – 2023 Paper", subject:"ICT", year:2023, term:"O/L Exam", type:"ol", medium:"Sinhala", file:"#" },
-      { title:"Grade 11 Maths – Term 1 2024 (Western)", subject:"Mathematics", year:2024, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
-      { title:"Grade 11 Science – Term 1 2024", subject:"Science", year:2024, term:"Term 1", type:"term", medium:"Sinhala", file:"#" },
+  10: {
+    name:"Grade 10",
+    subjects:["Mathematics","Science","Sinhala","Tamil","English","History","ICT","Commerce","Sinhala Literature","English Literature","Western Music","Eastern Music","Art"],
+    papers:[
+      {title:"Grade 10 Mathematics – Term 1 2024 (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Mathematics – Term 1 2024 (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Mathematics – Term 2 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Mathematics – Term 2 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (Sinhala)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (Tamil)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Science – Term 1 2024 (English)",subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Sinhala – Term 1 2024 (Sinhala)",subject:"Sinhala",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Sinhala Literature – Term 1 2024 (Sinhala)",subject:"Sinhala Literature",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Tamil – Term 1 2024 (Tamil)",subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 English – Term 1 2024 (English)",subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 English Literature – Term 1 2024 (English)",subject:"English Literature",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 History – Term 1 2024 (Sinhala)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 History – Term 1 2024 (Tamil)",subject:"History",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (Sinhala)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (Tamil)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 ICT – Term 1 2024 (English)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Commerce – Term 1 2024 (Sinhala)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Commerce – Term 1 2024 (Tamil)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (Sinhala)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (Tamil)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Western Music – Term 1 2024 (English)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      {title:"Grade 10 Eastern Music – Term 1 2024 (Sinhala)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 10 Eastern Music – Term 1 2024 (Tamil)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 10 Art – Term 1 2024 (Sinhala)",subject:"Art",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Western Province – Grade 10 Maths 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"Northern Province – Grade 10 Maths 2023 (Tamil)",subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
+    ]
+  },
+    papers:[
+      // === MATHEMATICS ===
+      {title:"O/L Mathematics – 2023 (Sinhala)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Mathematics – 2023 (Tamil)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Mathematics – 2023 (English)",subject:"Mathematics",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Mathematics – 2022 (Sinhala)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Mathematics – 2022 (Tamil)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Mathematics – 2022 (English)",subject:"Mathematics",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 Western Province (Sinhala)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 Northern Province (Tamil)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Mathematics – Term 1 2024 (English)",subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      // === SCIENCE ===
+      {title:"O/L Science – 2023 (Sinhala)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Science – 2023 (Tamil)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Science – 2023 (English)",subject:"Science",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Science – 2022 (Sinhala)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Science – 2022 (Tamil)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Science – 2022 (English)",subject:"Science",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      // === SINHALA LANGUAGE ===
+      {title:"O/L Sinhala Language – 2023 (Sinhala)",subject:"Sinhala",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Sinhala Language – 2022 (Sinhala)",subject:"Sinhala",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      // === SINHALA LITERATURE ===
+      {title:"O/L Sinhala Literature – 2023 (Sinhala)",subject:"Sinhala Literature",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Sinhala Literature – 2022 (Sinhala)",subject:"Sinhala Literature",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Sinhala Literature – Term 1 2024 (Sinhala)",subject:"Sinhala Literature",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === TAMIL LANGUAGE ===
+      {title:"O/L Tamil Language – 2023 (Tamil)",subject:"Tamil",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Tamil Language – 2022 (Tamil)",subject:"Tamil",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      // === ENGLISH LANGUAGE ===
+      {title:"O/L English Language – 2023 (English)",subject:"English",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L English Language – 2022 (English)",subject:"English",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      // === ENGLISH LITERATURE ===
+      {title:"O/L English Literature – 2023 (English)",subject:"English Literature",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L English Literature – 2022 (English)",subject:"English Literature",year:2022,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"Grade 11 English Literature – Term 1 2024 (English)",subject:"English Literature",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+      // === HISTORY ===
+      {title:"O/L History – 2023 (Sinhala)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L History – 2023 (Tamil)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L History – 2023 (English)",subject:"History",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L History – 2022 (Sinhala)",subject:"History",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L History – 2022 (Tamil)",subject:"History",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      // === ICT ===
+      {title:"O/L ICT – 2023 (Sinhala)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L ICT – 2023 (Tamil)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L ICT – 2023 (English)",subject:"ICT",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L ICT – 2022 (Sinhala)",subject:"ICT",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L ICT – 2022 (Tamil)",subject:"ICT",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 ICT – Term 1 2024 (Sinhala)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 ICT – Term 1 2024 (Tamil)",subject:"ICT",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      // === COMMERCE ===
+      {title:"O/L Commerce – 2023 (Sinhala)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Commerce – 2023 (Tamil)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Commerce – 2023 (English)",subject:"Commerce",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Commerce – 2022 (Sinhala)",subject:"Commerce",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Commerce – 2022 (Tamil)",subject:"Commerce",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Commerce – Term 1 2024 (Sinhala)",subject:"Commerce",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === WESTERN MUSIC ===
+      {title:"O/L Western Music – 2023 (Sinhala)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Western Music – 2023 (Tamil)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Western Music – 2023 (English)",subject:"Western Music",year:2023,term:"O/L Exam",type:"ol",medium:"English",file:"#"},
+      {title:"O/L Western Music – 2022 (Sinhala)",subject:"Western Music",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Western Music – Term 1 2024 (Sinhala)",subject:"Western Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      // === EASTERN MUSIC ===
+      {title:"O/L Eastern Music – 2023 (Sinhala)",subject:"Eastern Music",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Eastern Music – 2023 (Tamil)",subject:"Eastern Music",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Eastern Music – 2022 (Sinhala)",subject:"Eastern Music",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Eastern Music – 2022 (Tamil)",subject:"Eastern Music",year:2022,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"Grade 11 Eastern Music – Term 1 2024 (Sinhala)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Eastern Music – Term 1 2024 (Tamil)",subject:"Eastern Music",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+      // === ART ===
+      {title:"O/L Art – 2023 (Sinhala)",subject:"Art",year:2023,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"O/L Art – 2023 (Tamil)",subject:"Art",year:2023,term:"O/L Exam",type:"ol",medium:"Tamil",file:"#"},
+      {title:"O/L Art – 2022 (Sinhala)",subject:"Art",year:2022,term:"O/L Exam",type:"ol",medium:"Sinhala",file:"#"},
+      {title:"Grade 11 Art – Term 1 2024 (Sinhala)",subject:"Art",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
     ]
   },
   13: {
-    name: "Grade 13 (A/L)", subjects: ["Combined Maths","Physics","Chemistry","Biology","Economics","Accounting","Sinhala"],
-    papers: [
-      { title:"A/L Combined Maths – 2023", subject:"Combined Maths", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Combined Maths – 2022", subject:"Combined Maths", year:2022, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Physics – 2023", subject:"Physics", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Physics – 2022", subject:"Physics", year:2022, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Chemistry – 2023", subject:"Chemistry", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Chemistry – 2022", subject:"Chemistry", year:2022, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Biology – 2023", subject:"Biology", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Economics – 2023", subject:"Economics", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Accounting – 2023", subject:"Accounting", year:2023, term:"A/L Exam", type:"al", medium:"Sinhala", file:"#" },
-      { title:"A/L Maths Model Paper – 2024 (Western)", subject:"Combined Maths", year:2024, term:"Provincial", type:"provincial", medium:"Sinhala", file:"#" },
+    name:"Grade 13 (A/L)", subjects:["Combined Maths","Physics","Chemistry","Biology","Economics","Accounting","Tamil","Sinhala"],
+    papers:[
+      {title:"A/L Combined Maths – 2023 (Sinhala)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Combined Maths – 2023 (Tamil)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Combined Maths – 2023 (English)",subject:"Combined Maths",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Combined Maths – 2022 (Sinhala)",subject:"Combined Maths",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Combined Maths – 2022 (Tamil)",subject:"Combined Maths",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Physics – 2023 (Sinhala)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Physics – 2023 (Tamil)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Physics – 2023 (English)",subject:"Physics",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Physics – 2022 (Sinhala)",subject:"Physics",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Physics – 2022 (Tamil)",subject:"Physics",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Chemistry – 2023 (Sinhala)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Chemistry – 2023 (Tamil)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Chemistry – 2023 (English)",subject:"Chemistry",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Chemistry – 2022 (Sinhala)",subject:"Chemistry",year:2022,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Chemistry – 2022 (Tamil)",subject:"Chemistry",year:2022,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Biology – 2023 (Sinhala)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Biology – 2023 (Tamil)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Biology – 2023 (English)",subject:"Biology",year:2023,term:"A/L Exam",type:"al",medium:"English",file:"#"},
+      {title:"A/L Economics – 2023 (Sinhala)",subject:"Economics",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Economics – 2023 (Tamil)",subject:"Economics",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Accounting – 2023 (Sinhala)",subject:"Accounting",year:2023,term:"A/L Exam",type:"al",medium:"Sinhala",file:"#"},
+      {title:"A/L Accounting – 2023 (Tamil)",subject:"Accounting",year:2023,term:"A/L Exam",type:"al",medium:"Tamil",file:"#"},
+      {title:"A/L Maths Model Paper 2024 Western Province (Sinhala)",subject:"Combined Maths",year:2024,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+      {title:"A/L Maths Model Paper 2024 Northern Province (Tamil)",subject:"Combined Maths",year:2024,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
     ]
   }
 };
 
-// Generate default data for missing grades
+// Generate default data for missing grades (all 3 mediums)
 for(let g=1;g<=13;g++){
   if(!papers[g]){
     papers[g]={
       name:`Grade ${g}`,
-      subjects:["Mathematics","Science","Sinhala","English","History"],
+      subjects:["Mathematics","Science","Sinhala","Tamil","English","History"],
       papers:[
-        {title:`Grade ${g} Mathematics – Term 1 2024`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
-        {title:`Grade ${g} Mathematics – Term 2 2023`,subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
-        {title:`Grade ${g} Science – Term 1 2024`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
-        {title:`Grade ${g} Sinhala – Term 1 2024`,subject:"Sinhala",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
-        {title:`Grade ${g} English – Term 1 2024`,subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
-        {title:`Western Province – Grade ${g} Maths 2023`,subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 1 2024 (Sinhala)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 1 2024 (Tamil)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 1 2024 (English)`,subject:"Mathematics",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 2 2023 (Sinhala)`,subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Mathematics – Term 2 2023 (Tamil)`,subject:"Mathematics",year:2023,term:"Term 2",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (Sinhala)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (Tamil)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} Science – Term 1 2024 (English)`,subject:"Science",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Grade ${g} Sinhala – Term 1 2024 (Sinhala)`,subject:"Sinhala",year:2024,term:"Term 1",type:"term",medium:"Sinhala",file:"#"},
+        {title:`Grade ${g} Tamil – Term 1 2024 (Tamil)`,subject:"Tamil",year:2024,term:"Term 1",type:"term",medium:"Tamil",file:"#"},
+        {title:`Grade ${g} English – Term 1 2024 (English)`,subject:"English",year:2024,term:"Term 1",type:"term",medium:"English",file:"#"},
+        {title:`Western Province – Grade ${g} Maths 2023 (Sinhala)`,subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Sinhala",file:"#"},
+        {title:`Northern Province – Grade ${g} Maths 2023 (Tamil)`,subject:"Mathematics",year:2023,term:"Provincial",type:"provincial",medium:"Tamil",file:"#"},
       ]
     };
   }
@@ -1019,6 +1180,7 @@ for(let g=1;g<=13;g++){
 
 let currentGrade = null;
 let currentSubject = "All";
+let currentMedium = "All";
 
 function showHome() {
   document.getElementById('home-view').style.display = '';
@@ -1028,30 +1190,49 @@ function showHome() {
 function showGrade(g) {
   currentGrade = g;
   currentSubject = "All";
+  currentMedium = "All";
   const data = papers[g];
   document.getElementById('home-view').style.display = 'none';
   document.getElementById('grade-view').style.display = '';
   document.getElementById('grade-title').textContent = data.name + " Past Papers";
-  document.getElementById('grade-sub').textContent = `${data.papers.length} papers available — Term Tests, Provincial & Model Papers`;
+  document.getElementById('grade-sub').textContent = `${data.papers.length} papers available — Sinhala, Tamil & English Medium`;
+
+  // Reset medium tabs
+  document.querySelectorAll('#medium-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('#medium-tabs .tab-btn').classList.add('active');
 
   // Subject tabs
   const tabs = document.getElementById('subject-tabs');
-  tabs.innerHTML = `<button class="tab-btn active" onclick="filterSubject('All', this)">All Subjects</button>`;
+  tabs.innerHTML = `<button class="tab-btn active" onclick="filterSubject('All',this)">All Subjects</button>`;
   data.subjects.forEach(s => {
-    tabs.innerHTML += `<button class="tab-btn" onclick="filterSubject('${s}', this)">${s}</button>`;
+    tabs.innerHTML += `<button class="tab-btn" onclick="filterSubject('${s}',this)">${s}</button>`;
   });
 
-  renderPapers(data.papers);
+  applyFilters();
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function filterMedium(medium, btn) {
+  currentMedium = medium;
+  document.querySelectorAll('#medium-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
 }
 
 function filterSubject(subject, btn) {
   currentSubject = subject;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#subject-tabs .tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  const all = papers[currentGrade].papers;
-  const filtered = subject === 'All' ? all : all.filter(p => p.subject === subject);
-  renderPapers(filtered);
+  applyFilters();
+}
+
+function applyFilters() {
+  let list = papers[currentGrade].papers;
+  if(currentMedium !== 'All') list = list.filter(p => p.medium === currentMedium);
+  if(currentSubject !== 'All') list = list.filter(p => p.subject === currentSubject);
+  const countEl = document.getElementById('results-count');
+  countEl.textContent = `Showing ${list.length} paper${list.length !== 1 ? 's' : ''}${currentMedium !== 'All' ? ' · ' + currentMedium + ' medium' : ''}${currentSubject !== 'All' ? ' · ' + currentSubject : ''}`;
+  renderPapers(list);
 }
 
 function getBadge(type, medium) {
@@ -1070,7 +1251,11 @@ function getBadge(type, medium) {
 function renderPapers(list) {
   const el = document.getElementById('paper-list');
   if(!list.length){
-    el.innerHTML = `<div style="text-align:center;padding:40px;color:var(--gray);">No papers found for this subject yet.<br>Check back soon — we add new papers regularly!</div>`;
+    el.innerHTML = `<div style="text-align:center;padding:48px 20px;color:var(--gray);">
+      <div style="font-size:36px;margin-bottom:12px;">📭</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:6px;">No papers found</div>
+      <div style="font-size:13px;">Try selecting a different medium or subject filter.</div>
+    </div>`;
     return;
   }
   el.innerHTML = list.map(p => `
@@ -1081,7 +1266,7 @@ function renderPapers(list) {
         <div class="paper-meta">${p.subject} · ${p.year}</div>
         <div class="paper-badges">${getBadge(p.type, p.medium)}</div>
       </div>
-      <a class="download-btn" href="${p.file}" target="_blank" onclick="handleDownload(event, '${p.title}')">
+      <a class="download-btn" href="${p.file}" target="_blank" onclick="handleDownload(event, '${p.title.replace(/'/g,"\\'")}')">
         ⬇ Download
       </a>
     </div>
@@ -1089,10 +1274,9 @@ function renderPapers(list) {
 }
 
 function handleDownload(e, title) {
-  // Replace '#' links with real Google Drive / direct PDF URLs
-  if(e.target.closest('a').href.endsWith('#') || e.target.closest('a').getAttribute('href') === '#') {
+  if(e.target.closest('a').getAttribute('href') === '#') {
     e.preventDefault();
-    alert(`📋 "${title}"\n\nTo add this paper:\n1. Upload your PDF to Google Drive\n2. Copy the shareable link\n3. Replace the "#" in the HTML file with the real link\n\nThis is how you add your real papers!`);
+    alert(`📋 "${title}"\n\nTo activate this download:\n1. Upload your PDF to Google Drive\n2. Click Share → Anyone with the link\n3. Copy the link\n4. Open index.html on GitHub → edit → find this paper → replace "#" with your link\n\nThis is how you add your real papers!`);
   }
 }
 
@@ -1101,17 +1285,17 @@ function searchPapers(q) {
   const results = [];
   for(let g=1;g<=13;g++){
     papers[g].papers.forEach(p => {
-      if(p.title.toLowerCase().includes(q.toLowerCase()) || p.subject.toLowerCase().includes(q.toLowerCase())) {
-        results.push({...p, grade: g});
-      }
+      const hay = (p.title+p.subject+p.medium+p.year).toLowerCase();
+      if(hay.includes(q.toLowerCase())) results.push({...p, grade:g});
     });
   }
   document.getElementById('home-view').style.display = 'none';
-  const gv = document.getElementById('grade-view');
-  gv.style.display = '';
-  document.getElementById('grade-title').textContent = `Search Results for "${q}"`;
-  document.getElementById('grade-sub').textContent = `${results.length} papers found`;
+  document.getElementById('grade-view').style.display = '';
+  document.getElementById('grade-title').textContent = `Search: "${q}"`;
+  document.getElementById('grade-sub').textContent = `${results.length} papers found across all grades`;
+  document.getElementById('medium-tabs').innerHTML = '';
   document.getElementById('subject-tabs').innerHTML = '';
+  document.getElementById('results-count').textContent = '';
   renderPapers(results);
 }
 
